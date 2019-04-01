@@ -556,7 +556,7 @@
             "additionalConfigs" : [
               {
                 "key" : "coordinator",
-                "value" : "false"
+                "value" : "true"
               },
               {
                 "key" : "discovery-server.enabled",
