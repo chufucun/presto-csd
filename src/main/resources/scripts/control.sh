@@ -32,6 +32,11 @@ function copy_hdfs_config {
 function link_files {
   cp -r $CDH_PRESTO_HOME/bin $CONF_DIR
 
+  CDH_PRESTO_ETC=$CDH_PRESTO_HOME/etc
+  if [ -d "$CDH_PRESTO_ETC" ]; then
+    cp -f $CDH_PRESTO_ETC/* $CONF_DIR/etc
+  fi
+
   PRESTO_LIB=$CONF_DIR/lib
   if [ -L $PRESTO_LIB ]; then
     rm -f $PRESTO_LIB
